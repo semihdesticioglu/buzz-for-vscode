@@ -1,5 +1,6 @@
 # Buzz for VS Code
 
+[![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/semihdesticioglu.buzz-for-vscode?label=VS%20Code%20Marketplace&color=007ACC)](https://marketplace.visualstudio.com/items?itemName=semihdesticioglu.buzz-for-vscode)
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 ![VS Code 1.90+](https://img.shields.io/badge/VS%20Code-1.90%2B-007ACC.svg)
 ![Windows, macOS, Linux](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)
@@ -47,8 +48,12 @@ set up to run the same on Ubuntu and Windows.
 
 ## Quick start
 
-1. Download the `.vsix` from the [releases](https://github.com/semihdesticioglu/buzz-for-vscode/releases) and install
-   it with **Extensions → ··· → Install from VSIX…** (or `code --install-extension buzz-for-vscode-<version>.vsix`).
+1. Install **Buzz for VS Code** from the
+   [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=semihdesticioglu.buzz-for-vscode): open
+   **Extensions** (`Ctrl+Shift+X`, on a Mac `Cmd+Shift+X`), search for `Buzz for VS Code` and click **Install**, or run
+   `code --install-extension semihdesticioglu.buzz-for-vscode`. Updates then arrive by themselves. Without access to
+   the Marketplace, download the `.vsix` from the [releases](https://github.com/semihdesticioglu/buzz-for-vscode/releases)
+   and install it with **Extensions → ··· → Install from VSIX…**.
 2. Run **Buzz: Setup** from the Command Palette (`Ctrl+Shift+P`, on a Mac `Cmd+Shift+P`). It finds the CLI, reads
    the relay address from `~/.buzz/AGENTS.md`, asks for your key and tests the connection.
 3. Click the bee in the Activity Bar. Pick a channel note at the top and a thread on the left, and write. Type `@` to
