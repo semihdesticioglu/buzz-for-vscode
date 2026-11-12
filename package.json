@@ -1,0 +1,412 @@
+{
+  "name": "buzz-for-vscode",
+  "displayName": "Buzz for VS Code",
+  "description": "%description%",
+  "version": "0.8.7",
+  "publisher": "semihdesticioglu",
+  "author": {
+    "name": "Semih Desticioğlu",
+    "url": "https://www.linkedin.com/in/semihdesticioglu/"
+  },
+  "private": true,
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/semihdesticioglu/buzz-for-vscode.git"
+  },
+  "homepage": "https://github.com/semihdesticioglu/buzz-for-vscode#readme",
+  "bugs": {
+    "url": "https://github.com/semihdesticioglu/buzz-for-vscode/issues"
+  },
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "extensionKind": [
+    "ui"
+  ],
+  "categories": [
+    "Chat",
+    "AI",
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "buzz",
+          "title": "Buzz",
+          "icon": "media/bee.svg"
+        }
+      ]
+    },
+    "views": {
+      "buzz": [
+        {
+          "type": "webview",
+          "id": "buzz.chat",
+          "name": "%view.chat%"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "buzz.setup",
+        "title": "%cmd.setup%",
+        "category": "Buzz"
+      },
+      {
+        "command": "buzz.refresh",
+        "title": "%cmd.refresh%",
+        "category": "Buzz",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "buzz.openChannel",
+        "title": "%cmd.openChannel%",
+        "category": "Buzz"
+      },
+      {
+        "command": "buzz.openChatInEditor",
+        "title": "%cmd.openChatInEditor%",
+        "category": "Buzz",
+        "icon": "$(screen-full)"
+      },
+      {
+        "command": "buzz.sendSelection",
+        "title": "%cmd.sendSelection%",
+        "category": "Buzz"
+      },
+      {
+        "command": "buzz.addSelectionToChat",
+        "title": "%cmd.addSelectionToChat%",
+        "category": "Buzz"
+      },
+      {
+        "command": "buzz.sendProblem",
+        "title": "%cmd.sendProblem%",
+        "category": "Buzz"
+      },
+      {
+        "command": "buzz.sendTerminalSelection",
+        "title": "%cmd.sendTerminalSelection%",
+        "category": "Buzz"
+      },
+      {
+        "command": "buzz.sendDiff",
+        "title": "%cmd.sendDiff%",
+        "category": "Buzz",
+        "icon": "$(git-compare)"
+      },
+      {
+        "command": "buzz.setKey",
+        "title": "%cmd.setKey%",
+        "category": "Buzz"
+      },
+      {
+        "command": "buzz.setJiraToken",
+        "title": "%cmd.setJiraToken%",
+        "category": "Buzz"
+      },
+      {
+        "command": "buzz.forget",
+        "title": "%cmd.forget%",
+        "category": "Buzz"
+      },
+      {
+        "command": "buzz.showLog",
+        "title": "%cmd.showLog%",
+        "category": "Buzz"
+      },
+      {
+        "command": "buzz.lens.refresh",
+        "title": "%cmd.lensRefresh%",
+        "category": "Buzz"
+      },
+      {
+        "command": "buzz.lens.showFile",
+        "title": "%cmd.lensFile%",
+        "category": "Buzz"
+      },
+      {
+        "command": "buzz.openAgentFile",
+        "title": "%cmd.openAgentFile%",
+        "category": "Buzz"
+      },
+      {
+        "command": "buzz.lens.open",
+        "title": "%cmd.lensOpen%",
+        "category": "Buzz"
+      },
+      {
+        "command": "buzz.openDesktop",
+        "title": "%cmd.openDesktop%",
+        "category": "Buzz"
+      },
+      {
+        "command": "buzz.newChannel",
+        "title": "%cmd.newChannel%",
+        "category": "Buzz"
+      },
+      {
+        "command": "buzz.joinChannel",
+        "title": "%cmd.joinChannel%",
+        "category": "Buzz"
+      },
+      {
+        "command": "buzz.addMember",
+        "title": "%cmd.addMember%",
+        "category": "Buzz"
+      },
+      {
+        "command": "buzz.channelMenu",
+        "title": "%cmd.channelMenu%",
+        "category": "Buzz",
+        "icon": "$(add)"
+      },
+      {
+        "command": "buzz.diagnostics",
+        "title": "%cmd.diagnostics%",
+        "category": "Buzz"
+      }
+    ],
+    "submenus": [
+      {
+        "id": "buzz.editorContext",
+        "label": "Buzz"
+      },
+      {
+        "id": "buzz.terminalContext",
+        "label": "Buzz"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "buzz.channelMenu",
+          "when": "view == buzz.chat",
+          "group": "navigation@0"
+        },
+        {
+          "command": "buzz.openChatInEditor",
+          "when": "view == buzz.chat",
+          "group": "navigation@1"
+        }
+      ],
+      "editor/context": [
+        {
+          "submenu": "buzz.editorContext",
+          "group": "0_buzz@1"
+        }
+      ],
+      "scm/title": [
+        {
+          "command": "buzz.sendDiff",
+          "group": "navigation",
+          "when": "scmProvider == git"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "buzz.openChannel",
+          "when": "false"
+        },
+        {
+          "command": "buzz.lens.open",
+          "when": "false"
+        }
+      ],
+      "terminal/context": [
+        {
+          "submenu": "buzz.terminalContext",
+          "when": "terminalTextSelected",
+          "group": "0_buzz@1"
+        }
+      ],
+      "buzz.editorContext": [
+        {
+          "command": "buzz.addSelectionToChat",
+          "when": "editorHasSelection",
+          "group": "1_send@1"
+        },
+        {
+          "command": "buzz.sendSelection",
+          "when": "editorHasSelection",
+          "group": "1_send@2"
+        },
+        {
+          "command": "buzz.sendProblem",
+          "when": "resourceScheme == file",
+          "group": "2_problem@1"
+        }
+      ],
+      "buzz.terminalContext": [
+        {
+          "command": "buzz.sendTerminalSelection"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "buzz.addSelectionToChat",
+        "key": "alt+b",
+        "when": "editorTextFocus && editorHasSelection"
+      }
+    ],
+    "configuration": {
+      "title": "Buzz",
+      "properties": {
+        "buzz.language": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "en",
+            "tr"
+          ],
+          "enumDescriptions": [
+            "%cfg.language.auto%",
+            "English",
+            "Türkçe"
+          ],
+          "default": "auto",
+          "description": "%cfg.language%"
+        },
+        "buzz.cliPath": {
+          "type": "string",
+          "default": "",
+          "description": "%cfg.cliPath%",
+          "scope": "machine"
+        },
+        "buzz.desktopPath": {
+          "type": "string",
+          "default": "",
+          "description": "%cfg.desktopPath%",
+          "scope": "machine"
+        },
+        "buzz.relayUrl": {
+          "type": "string",
+          "default": "",
+          "description": "%cfg.relayUrl%",
+          "scope": "application"
+        },
+        "buzz.live": {
+          "type": "boolean",
+          "default": true,
+          "description": "%cfg.live%"
+        },
+        "buzz.refreshSeconds": {
+          "type": "number",
+          "default": 4,
+          "minimum": 2,
+          "description": "%cfg.refreshSeconds%"
+        },
+        "buzz.mentionSeconds": {
+          "type": "number",
+          "default": 60,
+          "minimum": 0,
+          "description": "%cfg.mentionSeconds%"
+        },
+        "buzz.jira.url": {
+          "type": "string",
+          "default": "",
+          "description": "%cfg.jira.url%",
+          "scope": "application"
+        },
+        "buzz.jira.email": {
+          "type": "string",
+          "default": "",
+          "description": "%cfg.jira.email%",
+          "scope": "machine"
+        },
+        "buzz.jira.projects": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "%cfg.jira.projects%"
+        },
+        "buzz.lens.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "%cfg.lens.enabled%"
+        },
+        "buzz.lens.inline": {
+          "type": "boolean",
+          "default": false,
+          "description": "%cfg.lens.inline%"
+        },
+        "buzz.agentRepos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "scope": "machine",
+          "description": "%cfg.agentRepos%"
+        },
+        "buzz.agentBranch": {
+          "type": "string",
+          "default": "buzz",
+          "description": "%cfg.agentBranch%"
+        },
+        "buzz.proposals.applyLocally": {
+          "type": "boolean",
+          "default": false,
+          "description": "%cfg.proposals.applyLocally%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "node esbuild.mjs",
+    "build:dev": "node esbuild.mjs --dev",
+    "watch": "node esbuild.mjs --watch",
+    "compile": "tsc -p .",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "pretest": "npm run compile",
+    "test": "node --test --test-timeout=120000 --test-force-exit \"out/test/*.test.js\"",
+    "package": "vsce package",
+    "check": "npm run lint && npm run format:check && npm run compile && npm test && npm run build",
+    "harness": "node test/harness/run.js",
+    "coverage": "node --test --test-force-exit --experimental-test-coverage --test-coverage-exclude=\"out/test/**\" \"out/test/*.test.js\""
+  },
+  "dependencies": {
+    "highlight.js": "^11.12.0",
+    "markdown-it": "^14.1.0",
+    "ws": "^8.22.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^20.14.0",
+    "@types/vscode": "~1.90.0",
+    "@types/ws": "^8.18.2",
+    "@vscode/test-electron": "^3.1.0",
+    "@vscode/vsce": "^4.1.0",
+    "esbuild": "^0.25.5",
+    "eslint": "^10.14.0",
+    "globals": "^17.14.0",
+    "prettier": "^3.9.10",
+    "puppeteer-core": "^23.11.1",
+    "typescript": "^5.6.0",
+    "typescript-eslint": "^8.72.1"
+  },
+  "icon": "media/icon.png",
+  "keywords": [
+    "buzz",
+    "chat",
+    "agents",
+    "ai agents",
+    "nostr",
+    "jira",
+    "code review",
+    "team chat"
+  ]
+}

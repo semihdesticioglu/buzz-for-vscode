@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report a security problem
+    url: https://github.com/semihdesticioglu/buzz-for-vscode/security/advisories/new
+    about: Please report vulnerabilities privately, not as a public issue.
+  - name: Buzz itself (relay, Buzz Desktop, agents)
+    url: https://github.com/block/buzz/issues
+    about: Problems with Buzz rather than with this extension belong to the Buzz project.

@@ -1,0 +1,37 @@
+name: Bug report
+description: Something in the extension does not work as it should
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. **Never paste your private key (nsec…) or a Jira token here.**
+        For a security problem, use Security → Report a vulnerability instead of an issue.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what you saw instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open a channel with ...
+        2. Click ...
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Buzz Diagnostics
+      description: 'Run **Buzz: Diagnostics** from the Command Palette and paste the block it writes to Output → Buzz. It contains no key or token.'
+      render: text
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: Extension version, VS Code version, operating system, Buzz Desktop version.
+      placeholder: 0.8.7, VS Code 1.98, Windows 11, Buzz Desktop 0.x
+    validations:
+      required: true

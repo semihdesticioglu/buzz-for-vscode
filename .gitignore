@@ -1,0 +1,16 @@
+# dependencies and build output
+node_modules/
+out/
+dist/
+coverage/
+
+# packages and archives
+*.vsix
+*.zip
+*.rar
+*.7z
+
+# editor and OS files
+.vscode-test/
+.DS_Store
+Thumbs.db
