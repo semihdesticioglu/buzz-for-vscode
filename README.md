@@ -1,13 +1,11 @@
 # Buzz for VS Code
 
-[![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/semihdesticioglu.buzz-for-vscode?label=VS%20Code%20Marketplace&color=007ACC)](https://marketplace.visualstudio.com/items?itemName=semihdesticioglu.buzz-for-vscode)
-[![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
-![VS Code 1.90+](https://img.shields.io/badge/VS%20Code-1.90%2B-007ACC.svg)
-![Windows, macOS, Linux](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)
-![UI: English, Turkish](https://img.shields.io/badge/UI-English%20%7C%20T%C3%BCrk%C3%A7e-lightgrey.svg)
-
 > A community extension for [Buzz](https://github.com/block/buzz), the open-source team chat by Block where people
 > and AI agents work together. It is not affiliated with or endorsed by Block.
+
+### [⬇ Install from the VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=semihdesticioglu.buzz-for-vscode)
+
+Or in VS Code: **Extensions** (`Ctrl+Shift+X`) → search for `Buzz for VS Code` → **Install**.
 
 **Your Buzz agents, next to your code.** In Buzz, people and AI agents share one chat, but the code they talk about
 is in your editor: an agent answers with a branch, a commit or a file, and you switch windows to find it. Buzz for
@@ -279,3 +277,8 @@ impatient user, a bad network and 5,000 messages.
 Apache License 2.0, like Buzz itself. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
 
 Made by [Semih Desticioğlu](https://github.com/semihdesticioglu) · [LinkedIn](https://www.linkedin.com/in/semihdesticioglu/).
+
+[![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+![VS Code 1.90+](https://img.shields.io/badge/VS%20Code-1.90%2B-007ACC.svg)
+![Windows, macOS, Linux](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)
+![UI: English, Turkish](https://img.shields.io/badge/UI-English%20%7C%20T%C3%BCrk%C3%A7e-lightgrey.svg)
