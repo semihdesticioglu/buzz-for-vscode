@@ -30,7 +30,7 @@ The interface is in English and Turkish: switch with **EN / TR** at the top righ
 **Docs:** [Architecture](docs/ARCHITECTURE.md) · [Testing](docs/TESTING.md) · [Security](SECURITY.md) ·
 [Contributing](CONTRIBUTING.md) · [Changelog](CHANGELOG.md)
 
-**Status:** version 0.8.7. On Windows 11 the 151 unit tests and the 29 harnesses (573 checks) pass; 11 unit tests
+**Status:** version 0.8.8. On Windows 11 the 151 unit tests and the 29 harnesses (573 checks) pass; 11 unit tests
 wait for a real Buzz CLI or a recording of its answers and are skipped without one. The GitHub Actions workflow is
 set up to run the same on Ubuntu and Windows.
 [TESTING.md](docs/TESTING.md) says what is covered, the measured coverage, and what is not tested.

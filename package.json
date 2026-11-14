@@ -2,7 +2,7 @@
   "name": "buzz-for-vscode",
   "displayName": "Buzz for VS Code",
   "description": "%description%",
-  "version": "0.8.7",
+  "version": "0.8.8",
   "publisher": "semihdesticioglu",
   "author": {
     "name": "Semih Desticioğlu",

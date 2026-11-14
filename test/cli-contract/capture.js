@@ -65,7 +65,8 @@ function askHidden(prompt) {
 function cliVersion(cli) {
   try {
     const [exe, pre] = /\.js$/i.test(cli) ? [process.execPath, [cli]] : [cli, []];
-    return execFileSync(exe, [...pre, '--version'], { encoding: 'utf8', timeout: 10_000, windowsHide: true }).trim();
+    // the CLI has no version command (2026-11): its error goes nowhere, and the recording says "unknown"
+    return execFileSync(exe, [...pre, '--version'], { encoding: 'utf8', timeout: 10_000, windowsHide: true, stdio: ['ignore', 'pipe', 'ignore'] }).trim();
   } catch {
     return 'unknown';
   }
@@ -111,8 +112,12 @@ async function readAll(client, core) {
     }
   }
   if (ch) {
-    const reply = page.find((e) => core.replyRootOf(e));
-    await step('messages thread', () => client.thread(ch.id, reply ? core.replyRootOf(reply) : page[0].id));
+    // a thread the CLI can read: the roots that replies point at first (one may be deleted: Buzz answers not_found),
+    // then the page's own roots; the first one read is enough
+    const roots = [...new Set([...page.map((e) => core.replyRootOf(e)).filter(Boolean), ...page.filter((e) => !core.replyRootOf(e)).map((e) => e.id)])];
+    for (const id of roots.slice(0, 4)) {
+      if (await step('messages thread', () => client.thread(ch.id, id))) break;
+    }
     const oldest = Math.min(...page.map((e) => e.created_at));
     await step('messages get --before (an older page)', () => client.messages(ch.id, { limit: 20, before: oldest }));
     await step('messages get --since', () => client.messages(ch.id, { limit: 20, since: oldest }));

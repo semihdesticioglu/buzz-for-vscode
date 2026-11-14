@@ -2,7 +2,10 @@
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-## Unreleased
+## 0.8.8 - 2026-11-14
+
+The first release on the VS Code Marketplace. The extension works as in 0.8.7; the documentation, the tests and the
+README around it are new.
 
 ### Documentation and tests (no change in behaviour)
 
