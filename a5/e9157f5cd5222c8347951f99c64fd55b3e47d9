@@ -1,0 +1,16 @@
+package.nls.json
+  h_c03ce19de523c0 2
+package.nls.tr.json
+  h_c03ce19de523c0 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a5e9157f5cd5222c8347951f99c64fd55b3e47d9",
+  "prompts": {},
+  "humans": {
+    "h_c03ce19de523c0": {
+      "author": "semihdesticioglu <55434804+semihdesticioglu@users.noreply.github.com>"
+    }
+  }
+}
