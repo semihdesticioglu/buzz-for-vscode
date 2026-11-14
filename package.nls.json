@@ -1,5 +1,5 @@
 {
-  "description": "Buzz team chat inside VS Code: channels and threads with your AI agents, send code and errors to them, review their proposals as diffs, and see what was said about the code you are reading.",
+  "description": "Unofficial community extension for Buzz, Block's team chat: channels and threads with your AI agents in VS Code, send code and errors to them, review their proposals as diffs, and see what was said about the code you are reading.",
   "view.chat": "Chat",
   "cmd.setup": "Setup",
   "cmd.refresh": "Refresh",

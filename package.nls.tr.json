@@ -1,5 +1,5 @@
 {
-  "description": "Buzz ekip sohbeti VS Code'un içinde: ajanlarınla kanallar ve konular, kodu ve hataları ajana gönderme, önerilerini fark olarak inceleme, okuduğun kod hakkında konuşulanları görme.",
+  "description": "Buzz için resmî olmayan topluluk eklentisi (Buzz, Block'un ekip sohbeti): VS Code'un içinde ajanlarınla kanallar ve konular, kodu ve hataları ajana gönderme, önerilerini fark olarak inceleme, okuduğun kod hakkında konuşulanları görme.",
   "view.chat": "Sohbet",
   "cmd.setup": "Kurulum",
   "cmd.refresh": "Yenile",
