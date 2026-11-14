@@ -1,0 +1,14 @@
+src/test/agentGit.test.ts
+  h_c03ce19de523c0 31-33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c7bade49593116d76cfae014546799ddb31c1a14",
+  "prompts": {},
+  "humans": {
+    "h_c03ce19de523c0": {
+      "author": "semihdesticioglu <55434804+semihdesticioglu@users.noreply.github.com>"
+    }
+  }
+}
