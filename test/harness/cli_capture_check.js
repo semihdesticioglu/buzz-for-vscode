@@ -26,14 +26,22 @@ const captures = () => fs.readdirSync(os.tmpdir()).filter((f) => f.startsWith('b
 /** The contract tests on a recording (only those whose name starts with `only`, when given): which passed and failed. */
 function contract(file, only) {
   const pattern = only ? [`--test-name-pattern=^${only.replace(/[.*+?^${}()|[\]\\-]/g, '\\$&')}`] : [];
-  const r = spawnSync(process.execPath, ['--test', '--test-force-exit', ...pattern, path.join(PROJ, 'out', 'test', 'cliContract.test.js')], {
+  // the spec reporter, asked for by name: without a terminal Node 22 writes TAP by default, Node 24 spec
+  const args = ['--test', '--test-force-exit', '--test-reporter=spec', ...pattern, path.join(PROJ, 'out', 'test', 'cliContract.test.js')];
+  const r = spawnSync(process.execPath, args, {
     encoding: 'utf8',
     timeout: 300_000,
     env: { ...process.env, BUZZ_CLI_RECORDING: file },
   });
   const out = (r.stdout || '') + (r.stderr || '');
-  const count = (what) => Number((new RegExp(`^ℹ ${what} (\\d+)`, 'm').exec(out) || [0, -1])[1]);
-  const failed = [...new Set((out.match(/^✖ (.+?) \(\d/gm) || []).map((l) => l.slice(2).replace(/ \(\d$/, '')))];
+  // summary lines: "ℹ pass 9" (spec) or "# pass 9" (TAP)
+  const count = (what) => Number((new RegExp(`^(?:ℹ|#) ${what} (\\d+)`, 'm').exec(out) || [0, -1])[1]);
+  const failed = [
+    ...new Set([
+      ...(out.match(/^✖ (.+?) \(\d/gm) || []).map((l) => l.slice(2).replace(/ \(\d$/, '')),
+      ...(out.match(/^not ok \d+ - (.+)$/gm) || []).map((l) => l.replace(/^not ok \d+ - /, '')),
+    ]),
+  ];
   return { status: r.status, pass: count('pass'), fail: count('fail'), skipped: count('skipped'), failed };
 }
 
