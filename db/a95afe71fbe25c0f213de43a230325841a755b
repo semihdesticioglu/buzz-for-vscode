@@ -1,0 +1,14 @@
+.gitattributes
+  h_c03ce19de523c0 1-11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "dba95afe71fbe25c0f213de43a230325841a755b",
+  "prompts": {},
+  "humans": {
+    "h_c03ce19de523c0": {
+      "author": "semihdesticioglu <55434804+semihdesticioglu@users.noreply.github.com>"
+    }
+  }
+}
