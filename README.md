@@ -22,6 +22,11 @@ VS Code brings the conversation, the agents' work and the history of each file i
   processes start without a shell, the chat runs under a strict Content Security Policy, and nothing is written to
   your files unless you ask.
 
+[![Watch the 1-minute demo on YouTube](docs/demo.jpg)](https://youtu.be/bOi27Ecsg6E)
+
+▶ **[Watch the 1-minute demo on YouTube](https://youtu.be/bOi27Ecsg6E)**: channels, agent proposals as diffs, branch and
+commit diffs, errors sent to an agent, search, Jira cards and Buzz Lens, with sample data.
+
 ![The chat with sample data: channel notes on top, the channel's threads on the left, the open thread on the right with an agent's proposal and a reported branch, each with Show diff](docs/screenshot.png)
 
 The interface is in English and Turkish: switch with **EN / TR** at the top right of the chat, or with the
