@@ -28,7 +28,9 @@ function commit(name: string, files: Record<string, string>, message = name): vo
 }
 
 before(() => {
-  dir = fs.mkdtempSync(path.join(os.tmpdir(), 'buzz-agentgit-'));
+  // the long name of the temp folder: Windows may give its short 8.3 form (C:\Users\RUNNER~1\...) while git reports
+  // the long one, and the paths below are compared as text
+  dir = fs.mkdtempSync(path.join(fs.realpathSync.native(os.tmpdir()), 'buzz-agentgit-'));
   git('init', '-q', '-b', 'buzz');
   git('config', 'user.email', 'test@example.com');
   git('config', 'user.name', 'Test');
