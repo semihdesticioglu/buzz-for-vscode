@@ -1,0 +1,14 @@
+test/harness/cli_capture_check.js
+  h_c03ce19de523c0 29-31,37-44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "93265ca47d4eb345523f0c7758c40defe34698f0",
+  "prompts": {},
+  "humans": {
+    "h_c03ce19de523c0": {
+      "author": "semihdesticioglu <55434804+semihdesticioglu@users.noreply.github.com>"
+    }
+  }
+}
